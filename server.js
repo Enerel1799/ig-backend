@@ -4,6 +4,7 @@ import cors from "cors";
 import userRouter from "./router/user/user.route.js";
 import postRouter from "./router/post/post.route.js";
 import dotenv from "dotenv";
+import commentRouter from "./router/comment/comment.route.js";
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ connectToMongoDB();
 
 app.use("/posts", postRouter);
 app.use("/", userRouter);
+app.use("/comment", commentRouter);
 
 app.listen(PORT, () => {
   console.log("Server is running on http://localhost:" + PORT);
