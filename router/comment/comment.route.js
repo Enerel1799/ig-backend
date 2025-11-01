@@ -6,6 +6,6 @@ import { getPostComments } from "../../controller/comment/get-post-comments.js";
 const commentRouter = express.Router();
 
 commentRouter.post("/create", authMiddleware, createComment);
-commentRouter.get("/get/postId", authMiddleware, getPostComments);
+commentRouter.get("/get/:postId", authMiddleware, getPostComments);
 
 export default commentRouter;

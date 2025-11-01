@@ -4,7 +4,7 @@ export const getPostComments = async (req, res) => {
   const postId = req.params.postId;
   const comments = await commentModel.find({
     post: postId,
-  });
+  }).populate('post','caption').populate('user','username profilePicture')
 
   res.status(200).json(comments);
 };
